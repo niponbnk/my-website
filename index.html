@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขายรถมอเตอร์ไซค์ Honda Click 160</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0.75rem; /* rounded-lg */
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-images img {
+            width: 100%;
+            flex-shrink: 0; /* Prevent images from shrinking */
+            object-fit: cover;
+            height: 100%;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px; /* full rounded */
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .carousel-button.left { left: 1rem; }
+        .carousel-button.right { right: 1rem; }
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-lg w-full p-6 space-y-6">
+        <!-- Motorcycle Image Carousel Section -->
+        <div class="carousel-container h-96"> <!-- Changed from h-64 to h-96 for larger images -->
+            <div class="carousel-images h-full" id="carouselImages">
+                <!-- Replace these placeholder URLs with your actual motorcycle images -->
+                <img src="IMG_3348.jpg" alt="Honda Click 160 Picture 1" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+1+Not+Found';">
+                <img src="IMG_3349.jpg" alt="Honda Click 160 Picture 2" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+2+Not+Found';">
+                <img src="IMG_3350.jpg" alt="Honda Click 160 Picture 3" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+3+Not+Found';">
+                <img src="IMG_3351.jpg" alt="Honda Click 160 Picture 4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+4+Not+Found';">
+                <img src="IMG_3355.jpg" alt="Honda Click 160 Picture 5" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+5+Not+Found';">
+                <img src="IMG_3339.jpg" alt="Honda Click 160 Picture 6" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+6+Not+Found';">
+            </div>
+            
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#10095;</button>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <h1 class="absolute bottom-4 left-4 text-white text-3xl font-bold">Honda Click 160</h1>
+        </div>
+
+        <!-- Details Section -->
+        <div class="space-y-4">
+            <h2 class="text-2xl font-semibold text-gray-800">2023 Honda Click 160</h2>
+            <p class="text-4xl font-extrabold text-indigo-600">฿49,900</p>
+            
+            <div class="text-gray-700 space-y-2">
+                <p><span class="font-medium">รุ่น:</span> Standard ดำล้วน</p>
+                <p><span class="font-medium">ปี:</span> 2023</p>
+                <p><span class="font-medium">เลขไมล์:</span> 19,905 กม.</p>
+                <p><span class="font-medium">ของแถม:</span> หมวกกันน็อค 1 ใบ</p>
+                <p><span class="font-medium">เอกสาร:</span> ครบพร้อมโอน เจ้าของขายเอง</p>
+                <p class="text-sm text-gray-500">นัดดูรถได้ครับ</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="border-t pt-6 mt-6 border-gray-200 space-y-4">
+            <h3 class="text-xl font-semibold text-gray-800">ติดต่อผู้ขาย</h3>
+            <div class="flex flex-col space-y-3">
+                <a href="tel:+66804416219" 
+                   class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                    โทรศัพท์: 080-441-6219
+                </a>
+                <div class="flex items-center justify-center bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-md">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.041 0 01-4.083-.98L2 17l1.339-3.182c-.37-.25-.722-.534-1.054-.85C1.042 12.547 0 11.293 0 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm4 0h-2v2h2V9zm4 0h-2v2h2V9z" clip-rule="evenodd"></path></svg>
+                    Line ID: nipon16840
+                    <button onclick="copyToClipboard('nipon16840')" 
+                            class="ml-3 bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-md text-sm transition duration-300 ease-in-out">
+                        คัดลอก
+                    </button>
+                </div>
+                <p id="copyMessage" class="text-center text-sm text-gray-600 mt-2 hidden">คัดลอก Line ID แล้ว!</p>
+            </div>
+        </div>
+
+    <script>
+        let currentSlide = 0;
+        const imagesContainer = document.getElementById('carouselImages');
+        const images = imagesContainer.getElementsByTagName('img');
+        const totalSlides = images.length;
+        const dotsContainer = document.getElementById('carouselDots');
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            updateDots();
+        }
+
+        // Function to move to the next or previous slide
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Function to create and update navigation dots
+        function createDots() {
+            dotsContainer.innerHTML = ''; // Clear existing dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                dot.onclick = () => showSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+            updateDots();
+        }
+
+        // Function to highlight the active dot
+        function updateDots() {
+            const dots = dotsContainer.getElementsByClassName('dot');
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            if (dots[currentSlide]) {
+                dots[currentSlide].classList.add('active');
+            }
+        }
+
+        // Initialize carousel on page load
+        window.onload = function() {
+            createDots();
+            showSlide(0); // Show the first slide initially
+        };
+
+        // Function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                const messageElement = document.getElementById('copyMessage');
+                messageElement.classList.remove('hidden');
+                setTimeout(() => {
+                    messageElement.classList.add('hidden');
+                }, 2000); // Hide message after 2 seconds
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
